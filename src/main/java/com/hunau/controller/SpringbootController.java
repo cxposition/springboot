@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 import java.util.ArrayList;
@@ -35,5 +36,13 @@ public class SpringbootController {
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login() {
         return "login";
+    }
+
+    @RequestMapping(value = "hello2", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Map<String, Object>> hello2() {
+        List<Map<String, Object>> mapList = new ArrayList<>();
+        springbootMapper.show(mapList);
+        return mapList;
     }
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css}">
     <style>
         .btn-primary{
             background-color: #6f42c1;
@@ -26,7 +26,8 @@
 <div class="container container-small">
     <form class="container">
         <div class="form-group">
-            <div align="center" class="alert-success">登陆成功正在跳转</div>
+
+            <div class="alert-success">登陆成功正在跳转</div>
             <label>用户名</label>
             <input class="form-control" type="text">
         </div>
@@ -34,7 +35,7 @@
             <label>密  码</label>
             <input class="form-control" type="password">
         </div>
-        <div align="center" class="form-group">
+        <div class="form-group">
             <input class="btn btn-block" type="submit" value="立即登录">
         </div>
     </form>
