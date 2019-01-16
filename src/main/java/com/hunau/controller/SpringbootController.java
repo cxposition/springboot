@@ -1,7 +1,6 @@
 package com.hunau.controller;
 
-import com.hunau.entity.User;
-import com.hunau.service.SpringbootService;
+import com.hunau.service.SpringbootServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,7 +12,7 @@ import java.util.Map;
  */
 @Controller
 public class SpringbootController {
-    SpringbootService springbootService;
+    SpringbootServiceImpl springbootService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(Map<String, Object> map) {
@@ -22,7 +21,7 @@ public class SpringbootController {
 
     @RequestMapping(value = "hello", method = RequestMethod.GET)
     public String hello(Map <String, Object> map) {
-        springbootService = new SpringbootService("user", map);
+        springbootService = new SpringbootServiceImpl("user", map);
         return "hello";
     }
 
