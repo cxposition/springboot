@@ -4,27 +4,35 @@
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <script src="js/bootstrap.js"></script>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hello</title>
+    <script>
+        function back() {
+            window.location.href="/spring";
+        }
+    </script>
 </head>
 <body>
-    <h1>welcome</h1>
-    <table border="1" cellpadding="0" cellspacing="0">
-        <thead>
-            <th>序号</th>
-            <th>AAA</th>
-            <th>BBB</th>
-            <th>CCC</th>
-            <th>DDD</th>
-        </thead>
-        <tbody>
-            <tr th:each="entries,stat:${mapList}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
-                <td th:text="${stat.count}"></td>
-                <td th:text="${entries[A]}"></td>
-                <td th:text="${entries[B]}"></td>
-                <td th:text="${entries[C]}"></td>
-                <td th:text="${entries[D]}"></td>
-            </tr>
-        </tbody>
-    </table>
+    <h1 align="center" class="page-header" >welcome<small>This is a table</small></h1>
+    <div align="center">
+        <table border="1" cellpadding="0" cellspacing="0">
+            <thead>
+                <th>序号</th>
+                <th>AAA</th>
+                <th>BBB</th>
+                <th>CCC</th>
+                <th>DDD</th>
+            </thead>
+            <tbody>
+                <tr th:each="entries,stat:${mapList}" th:style="'background-color:'+@{${stat.odd}?'#F2F2F2'}">
+                    <td th:text="${stat.count}"></td>
+                    <td th:text="${entries[A]}"></td>
+                    <td th:text="${entries[B]}"></td>
+                    <td th:text="${entries[C]}"></td>
+                    <td th:text="${entries[D]}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="back()" type="button" class="btn btn-default">back</button>
+    </div>
 </body>
 </html>
