@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="bootstrap.css"/>
-    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/bootstrap.js"></script>
     <title>Title</title>
+    <script>
+        function hello() {
+            window.location.href="hello";
+        }
+
+        function login() {
+            window.location.href="login";
+        }
+    </script>
 </head>
 <body>
     <h1>Hello Spring Boot!</h1>
     <div class="btn-group" role="group" aria-label="...">
-        <button type="button" class="btn btn-default">Left</button>
-        <button type="button" class="btn btn-default">Middle</button>
-        <button type="button" class="btn btn-default">Right</button>
+        <button onclick="hello()" type="button" class="btn btn-default">Hello</button>
+        <button onclick="login()" type="button" class="btn btn-default">Login</button>
+        <button type="button" class="btn btn-default">None</button>
     </div>
 </body>
 </html>
