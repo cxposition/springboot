@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
     <h1>welcome</h1>
     <p th:text="'id:'+ ${user.id} + 'password:' + ${user.pwd}" ></p>
+    <table border="1" class="table">
+        <tr>
+            <th>user id</th>
+            <th>password</th>
+        </tr>
+        <tr>
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.pwd}"></td>
+        </tr>
+    </table>
 </body>
 </html>
