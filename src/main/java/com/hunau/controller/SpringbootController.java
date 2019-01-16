@@ -1,10 +1,15 @@
 package com.hunau.controller;
 
-import com.hunau.service.SpringbootServiceImpl;
+import com.hunau.mapper.SpringbootMapper;
+import com.hunau.mapper.SpringbootMapperImpl;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,16 +17,18 @@ import java.util.Map;
  */
 @Controller
 public class SpringbootController {
-    SpringbootServiceImpl springbootService;
+    SpringbootMapper springbootMapper = new SpringbootMapperImpl();
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(Map<String, Object> map) {
+    public String index() {
         return "index";
     }
 
     @RequestMapping(value = "hello", method = RequestMethod.GET)
-    public String hello(Map <String, Object> map) {
-        springbootService = new SpringbootServiceImpl("user", map);
+    public String hello(Model model) {
+        List<Map<String, Object>> mapList = new ArrayList<>();
+        springbootMapper.show(mapList);
+        model.addAttribute("mapList",mapList);
         return "hello";
     }
 
