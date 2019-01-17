@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml;http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css}">
     <script src="js/bootstrap.js"></script>
     <title>Index</title>
     <script>
@@ -21,10 +21,10 @@
 </head>
 <body>
     <h1 align="center" class="page-header text-center">Hello Spring Boot!<small>Welcome</small></h1>
-    <div align="center" class="btn-group text-center" role="group">
+    <div align="center" class="btn-group text-center" role="group" style="text-align: center">
         <button onclick="hello()" type="button" class="btn btn-primary btn-lg">Hello</button>
         <button onclick="login()" type="button" class="btn btn-primary btn-lg">Login</button>
-        <button onclick="hello2()" type="button" class="btn btn-default">None</button>
+        <button onclick="hello2()" type="button" class="btn btn-primary btn-lg">None</button>
     </div>
 </body>
 </html>

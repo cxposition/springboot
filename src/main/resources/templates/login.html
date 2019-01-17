@@ -20,6 +20,11 @@
             max-width: 350px;
         }
     </style>
+    <script>
+        function back() {
+            window.location.href="/spring";
+        }
+    </script>
 </head>
 <body>
 <h1 align="center">登录</h1>
@@ -36,7 +41,9 @@
             <input class="form-control" type="password">
         </div>
         <div class="form-group">
-            <input class="btn btn-block" type="submit" value="立即登录">
+
+            <button onclick="" type="button" class="btn btn-block">登陆</button>
+            <button onclick="back()" type="button" class="btn btn-block">返回</button>
         </div>
     </form>
 </div>
